@@ -1,0 +1,39 @@
+ :root{
+  --b1color:#0080be!important;
+  --b2color:#2b519f!important;
+  --j1color:#f59e22!important;
+ }
+
+
+ body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+h1{
+  color:var(--b1color);
+}
+h2{
+  color:var(--b2color);
+}
+h3{
+  color:var(--b2color);
+}
+h4{
+  color:var(--b2color);
+}
+nav{
+  background-color: var(--b1color);
+}
+.main {
+      flex: 1 0 auto;
+    } 
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255,255,255,.9);
+  }
+    .parallax-container .section {
+      width: 100%;
+    }
