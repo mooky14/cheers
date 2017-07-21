@@ -13,14 +13,14 @@
 
     <!-- Partenaires -->
 <ul id="dd_offre1" class="dropdown-content">
-    <li class="<?php echo ($page=="offre1")?"active" : ""; ?>"><a href="index.php?page=offre1">Offre clé en main</a></li>
-    <li class="<?php echo ($page=="offre2")?"active" : ""; ?>"><a href="index.php?page=offre2">Offre medium</a></li>
-    <li class="<?php echo ($page=="offre3")?"active" : ""; ?>"><a href="index.php?page=offre3">Offre light</a></li>
+    <li class="<?php echo ($page=="offre1")?"active" : ""; ?>"><a href="index.php?page=offre1">Offre Light</a></li>
+    <li class="<?php echo ($page=="offre2")?"active" : ""; ?>"><a href="index.php?page=offre2">Offre Médium</a></li>
+    <li class="<?php echo ($page=="offre3")?"active" : ""; ?>"><a href="index.php?page=offre3">Offre Full</a></li>
 </ul>
 <ul id="dd_offre2" class="dropdown-content">
-    <li class="<?php echo ($page=="offre1")?"active" : ""; ?>"><a href="index.php?page=offre1">Offre clé en main</a></li>
-    <li class="<?php echo ($page=="offre2")?"active" : ""; ?>"><a href="index.php?page=offre2">Offre medium</a></li>
-    <li class="<?php echo ($page=="offre3")?"active" : ""; ?>"><a href="index.php?page=offre3">Offre light</a></li>
+    <li class="<?php echo ($page=="offre1")?"active" : ""; ?>"><a href="index.php?page=offre1">Offre Light</a></li>
+    <li class="<?php echo ($page=="offre2")?"active" : ""; ?>"><a href="index.php?page=offre2">Offre Médium</a></li>
+    <li class="<?php echo ($page=="offre3")?"active" : ""; ?>"><a href="index.php?page=offre3">Offre Full</a></li>
 </ul>
 
     <!-- Formulaire connexion -->
