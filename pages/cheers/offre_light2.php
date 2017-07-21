@@ -5,7 +5,7 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Offre clé en main
+                <h1 class="page-header">Offre light
                     <small>,on s'occupe de tout</small>
                 </h1>
                 <ol class="breadcrumb">
@@ -69,13 +69,13 @@ Ut accumsan et nisi vel interdum. Integer laoreet libero ut leo fermentum condim
                         <a href="#">&laquo;</a>
                     </li>
                     <li class="active">
-                        <a href="offre_cle_en_main.php">1</a>
+                        <a href="offre_light.php">1</a>
                     </li>
                     <li>
                         <a href="offre_medium.php">2</a>
                     </li>
                     <li>
-                        <a href="offre_light.php">3</a>
+                        <a href="offre_full.php">3</a>
                     </li>
                     <li>
                         <a href="#">&raquo;</a>
