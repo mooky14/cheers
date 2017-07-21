@@ -3,7 +3,7 @@
     <div class="section no-pad-bot">
       <div class="container">
         <br><br>
-        <h1 class="header center text-lighten-2">Offre1</h1>
+        <h1 class="header center text-lighten-2">Offre Full</h1>
         <div class="row center">
           <h5 class="header col s12 light">Une offre qui ne va pas vous décevoir</h5>
         </div>
