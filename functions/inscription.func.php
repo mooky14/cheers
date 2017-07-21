@@ -12,7 +12,7 @@ if($_GET['action'] == "new") {
     if(empty($_POST['password-confirm'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"password-confirm", "message"=>"Confirmation de mot de passe non renseignée.");}
     if(empty($_POST['datenaiss'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"datenaiss", "message"=>"Date de naissance non renseigné.");}
     if(empty($_POST['nom'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"nom", "message"=>"Nom de famille non renseigné.");}
-    if(empty($_POST['prenom'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"prenom", "message"=>"Prénom non renseigné.");}
+    //if(empty($_POST['prenom'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"prenom", "message"=>"Prénom non renseigné.");}
     if(empty($_POST['ville'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"ville", "message"=>"Ville non renseignée.");}
     if(empty($_POST['postal'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"postal", "message"=>"Code Postal non renseigné.");}
     if(empty($_POST['adresse'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"adresse", "message"=>"Adresse non renseignée.");}
@@ -52,11 +52,11 @@ if($_GET['action'] == "new") {
         echo '</div>';
     } else { // Si pas d'erreur, on ajoute l'utilisateur dans la base de données.
 
-        $insertion_utilisateur = $db->prepare("INSERT INTO utilisateurs (username_utilisateur, password_utilisateur, nom_utilisateur, prenom_utilisateur, naissance_utilisateur, ville_utilisateur, postal, adresse, telephone) VALUES (:username, :password, :nom, :prenom, :datenaiss, :ville, :postal, :adresse, :telephone)");
+        $insertion_utilisateur = $db->prepare("INSERT INTO utilisateurs (username_utilisateur, password_utilisateur, nom_utilisateur, naissance_utilisateur, ville_utilisateur, postal, adresse, telephone) VALUES (:username, :password, :nom, :datenaiss, :ville, :postal, :adresse, :telephone)");
         $insertion_utilisateur->bindParam(":username",$_POST['username']);
         $insertion_utilisateur->bindParam(":password",sha1($_POST['password']));
         $insertion_utilisateur->bindParam(":nom",$_POST['nom']);
-        $insertion_utilisateur->bindParam(":prenom",$_POST['prenom']);
+        //$insertion_utilisateur->bindParam(":prenom",$_POST['prenom']);
         $insertion_utilisateur->bindParam(":datenaiss", $timestamp_naissance);
         $insertion_utilisateur->bindParam(":ville",$_POST['ville']);
         $insertion_utilisateur->bindParam(":postal", $_POST['postal']);
@@ -65,9 +65,7 @@ if($_GET['action'] == "new") {
 
         $insertion_utilisateur->execute();
 
-        echo '<p>Félicitations ! Vous êtes maintenant inscrit sur le site. Vous pouvez vous connecter dès maintenant</p><p class="text-center"><a class="" href="connexion.php">Connexion</a></p>';
-        envoiSMS($_POST['telephone'], "Bienvenue sur Rugby'Covoit ! Vous pouvez maintenant chercher un trajet ou en proposer un ! A très bientôt !");
-
+        header('Location: http://localhost/cheers/index.php?page=home');
         exit();
 
     }

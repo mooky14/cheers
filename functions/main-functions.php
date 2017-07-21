@@ -62,4 +62,7 @@ function computeAge($starttime,$endtime)
     return $age;
 }
 
+// Je récupère les données de la BDD et je créé mes variables : 
+    
+    
 ?>

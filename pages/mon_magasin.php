@@ -20,9 +20,11 @@
 <!-- fin modal -->
 <div class="row">
     <h2><?php echo $get_nom_magasin;?></h2>
-        <p>Ville : <?php echo $get_ville_magasin;?></p>
-        <p>Code postal : <?php echo $get_postal_magasin;?></p>
-        <p>Adresse : <?php echo $get_adresse_magasin;?></p>
+        <p>Ville : <?php echo $get_ville_magasin;?><br>
+        Code postal : <?php echo $get_postal_magasin;?><br>
+        Adresse : <?php echo $get_adresse_magasin." ".$get_postal_magasin." ".$get_ville_magasin;?> <br>
+        Téléphone : <?php echo $get_telephone_magasin;?> </p>
+
 
 
 </div>
@@ -32,38 +34,38 @@
     <h2>Modifier les informations de l'enseigne</h2>
     <p>Renseignez les coordonnées de votre enseigne</p>
     <form class="col s12" action="index.php?page=mon_magasin&action=new" method="post">
-          <div class=" <?php echo (isErreurChamps('usershop')?"has-error":""); ?>">
+          <div class="">
             <label class="control-label" for="usershop">Nom de magasin :</label>
-            <input type="text" class="form-control" id="usershop" name="usershop" value="<?php echo htmlentities($_POST['usershop']); ?>" placeholder="Exemple : ChuckNorris">
+            <input type="text" class="form-control" id="usershop" name="usershop" value="<?php echo htmlentities($_POST['usershop']); ?>" placeholder="<?php echo $get_nom_magasin;?>">
           </div>
-            <div class=" <?php echo (isErreurChamps('datenaiss')?"has-error":""); ?>">
-                <label class="control-label" for="datenaiss">Date de naissance :</label>
-                <input type="text" class="form-control datepicker" data-date="<?php echo date("d-m-Y"); ?>" data-date-format="dd-mm-yyyy" id="datenaiss" name="datenaiss" placeholder="JJ/MM/AAAA" data-date-viewmode="years" value="<?php echo htmlentities($_POST['datenaiss']); ?>">
+            <div class="">
+                <label class="control-label" for="datenaiss">Date de création :</label>
+                <input type="text" class="form-control datepicker" data-date="<?php echo date("d-m-Y"); ?>" data-date-format="dd-mm-yyyy" id="datenaiss" name="datenaiss" placeholder="<?php echo date('d/m/Y', $get_naissance);?>" data-date-viewmode="years" value="<?php echo htmlentities($_POST['datenaiss']); ?>">
             </div>
         <div class="row">
             <div class="input-field col s12 m12 l6">
-                <div class=" <?php echo (isErreurChamps('ville_magasin')?"has-error":""); ?>">
-                    <label class="control-label" for="ville_magasin">ville_magasin d'habitation</label>
-                    <input type="text" class="form-control" id="ville_magasin" name="ville_magasin" value="<?php echo htmlentities($_POST['ville_magasin']); ?>" placeholder="ville_magasin">
+                <div class="">
+                    <label class="control-label" for="ville_magasin">Ville du magasin</label>
+                    <input type="text" class="form-control" id="ville_magasin" name="ville_magasin" value="<?php echo htmlentities($_POST['ville_magasin']); ?>" placeholder="<?php echo $get_ville_magasin;?>">
                 </div>
             </div>
             <div class="input-field col s12 m12 l6">
-                <div class=" <?php echo (isErreurChamps('postal_magasin')?"has-error":""); ?>">
-                    <label class="control-label" for="postal_magasin">Code postal_magasin</label>
-                    <input type="text" class="form-control" id="postal_magasin" name="postal_magasin" value="<?php echo htmlentities($_POST['postal_magasin']); ?>" placeholder="76000">
+                <div class="">
+                    <label class="control-label" for="postal_magasin">Code postal du magasin</label>
+                    <input type="text" class="form-control" id="postal_magasin" name="postal_magasin" value="<?php echo htmlentities($_POST['postal_magasin']); ?>" placeholder="<?php echo $get_postal_magasin;?>">
                 </div>
             </div> 
         </div>
-         <div class=" <?php echo (isErreurChamps('adresse_magasin')?"has-error":""); ?>">
-            <label class="control-label" for="adresse_magasin">adresse_magasin</label>
-            <input type="text" class="form-control" id="adresse_magasin" name="adresse_magasin" value="<?php echo htmlentities($_POST['adresse_magasin']); ?>" placeholder="12 rue Michel Dupont">
+         <div class="">
+            <label class="control-label" for="adresse_magasin">Adresse du magasin</label>
+            <input type="text" class="form-control" id="adresse_magasin" name="adresse_magasin" value="<?php echo htmlentities($_POST['adresse_magasin']); ?>" placeholder="<?php echo $get_adresse_magasin;?>">
         </div>   
-        <div class=" <?php echo (isErreurChamps('telephone_magasin')?"has-error":""); ?>">
+        <div class="">
             <label class="control-label" for="telephone_magasin">Numéro de téléphone</label>
-            <input type="text" class="form-control" id="telephone_magasin" name="telephone_magasin" value="<?php echo htmlentities($_POST['telephone_magasin']); ?>" placeholder="Numéro de téléphone Français, au format 0601020304">
+            <input type="text" class="form-control" id="telephone_magasin" name="telephone_magasin" value="<?php echo htmlentities($_POST['telephone_magasin']); ?>" placeholder="<?php echo $get_telephone_magasin;?>">
         </div>
 
-          <button type="submit" class="btn btn-success">Terminer et payer</button>
+          <button type="submit" class="btn btn-success">Modifier les informations</button>
           
     </form>
 </div>

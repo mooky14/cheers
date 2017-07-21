@@ -3,18 +3,16 @@
   --b2color:#2b519f!important;
   --j1color:#f59e22!important;
  }
-
-
- body {
+body {
       display: flex;
       min-height: 100vh;
       flex-direction: column;
-    }
+}
 h1{
   color:var(--b1color);
 }
 h2{
-  color:var(--b2color);
+  color:var(--b1color);
 }
 h3{
   color:var(--b2color);
@@ -34,6 +32,6 @@ nav{
     height: auto;
     color: rgba(255,255,255,.9);
   }
-    .parallax-container .section {
+.parallax-container .section {
       width: 100%;
-    }
+  }

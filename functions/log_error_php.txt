@@ -1,0 +1,9 @@
+[21-Jul-2017 12:54:43 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:55:07 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:56:00 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:57:34 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:57:39 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:58:11 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:58:19 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:58:23 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
+[21-Jul-2017 12:58:23 UTC] PHP Notice:  Use of undefined constant e_all - assumed 'e_all' in C:\MAMP\htdocs\cheers\functions\mon_magasin.func.php on line 9
