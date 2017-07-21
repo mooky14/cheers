@@ -5,7 +5,7 @@
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Offre full
+                <h1 class="page-header">Offre Full
                     <small>,on s'occupe de tout</small>
                 </h1>
                 <ol class="breadcrumb">
