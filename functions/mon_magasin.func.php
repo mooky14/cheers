@@ -22,8 +22,6 @@
     //echo $get_postal_magasin;
     //echo $get_adresse_magasin;
     //echo $get_telephone_magasin;
-
-
 //var_dump($_POST);
 if($_GET['action'] == "new") {
    // !empty($_POST['usershop']) && !empty($_POST['password']) && !empty($_POST['password-confirm']) && !empty($_POST['datenaiss'])
@@ -99,7 +97,7 @@ if($_GET['action'] == "new") {
             $insertion_telephone_magasin->execute();
         }
 
-        header('Location: http://localhost/cheers/index.php?page=mon_magasin');
+        header('Location: http://localhost:8888/cheers/index.php?page=mon_magasin');
         
 
         exit();

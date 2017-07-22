@@ -1,18 +1,18 @@
 <?php
 var_dump($_POST);
 if($_GET['action'] == "new") {
-   // !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['password-confirm']) && !empty($_POST['datenaiss'])
+   // !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['password-confirm']) && !empty($_POST['datenaiss'])
     // Les champs ont été renseignés et sont tous remplis.
 
     $messages_erreurs = array(); //création de la variable qui va contenir les erreurs
 
     // Véfification des informations entrées
-    if(empty($_POST['username'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"username", "message"=>"Nom d'utilisateur non renseigné.");}
+    if(empty($_POST['email'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"email", "message"=>"Nom d'utilisateur non renseigné.");}
     if(empty($_POST['password'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"password", "message"=>"Mot de passe non renseigné.");}
     if(empty($_POST['password-confirm'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"password-confirm", "message"=>"Confirmation de mot de passe non renseignée.");}
     if(empty($_POST['datenaiss'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"datenaiss", "message"=>"Date de naissance non renseigné.");}
     if(empty($_POST['nom'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"nom", "message"=>"Nom de famille non renseigné.");}
-    //if(empty($_POST['prenom'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"prenom", "message"=>"Prénom non renseigné.");}
+    if(empty($_POST['prenom'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"prenom", "message"=>"Prénom non renseigné.");}
     if(empty($_POST['ville'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"ville", "message"=>"Ville non renseignée.");}
     if(empty($_POST['postal'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"postal", "message"=>"Code Postal non renseigné.");}
     if(empty($_POST['adresse'])) {$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"adresse", "message"=>"Adresse non renseignée.");}
@@ -21,14 +21,14 @@ if($_GET['action'] == "new") {
     $_POST['telephone'] = str_replace("+33", "0", $_POST['telephone']);
     if(!preg_match("#^[0-9]{10}$#", $_POST['telephone'])) { $messages_erreurs[sizeof($messages_erreurs)] = array("field"=>"telephone", "message"=>"Le numéro de téléphone n'est pas correct, il doit être au format 0601020304."); }
     
-    if(!preg_match("#^[a-z0-9_-]{3,15}$#i", $_POST['username'])) { $messages_erreurs[sizeof($messages_erreurs)] = array("field"=>"username", "message"=>"Le nom d'utilisateur ne peut contenir que \"a-z A-Z 0-9 _ -\" et doit faire entre 3 et 15 caractères"); } // Format nom d'utilisateur
+    if(!preg_match("#^[a-z0-9_-]{3,15}$#i", $_POST['email'])) { $messages_erreurs[sizeof($messages_erreurs)] = array("field"=>"email", "message"=>"Le nom d'utilisateur ne peut contenir que \"a-z A-Z 0-9 _ -\" et doit faire entre 3 et 15 caractères"); } // Format nom d'utilisateur
 
-    $getNbUsers = $db->prepare("SELECT id_utilisateur FROM utilisateurs WHERE username_utilisateur = :username");
-    $getNbUsers->bindParam(":username", $_POST['username']);
+    $getNbUsers = $db->prepare("SELECT id_utilisateur FROM utilisateurs WHERE email_utilisateur = :email");
+    $getNbUsers->bindParam(":email", $_POST['email']);
     $getNbUsers->execute();
     $getNbUsers = $getNbUsers->rowCount();
     if($getNbUsers != 0) {
-        $messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"username", "message"=>"Le nom d'utilisateur est déjà utilisé.");
+        $messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"email", "message"=>"Le nom d'utilisateur est déjà utilisé.");
     }
 
     if (is_int($_POST['postal'])){$messages_erreurs[sizeof($messages_erreurs)]=array("field"=>"postal", "message"=>"Le code postal n'est pas au bon format");}
@@ -52,11 +52,11 @@ if($_GET['action'] == "new") {
         echo '</div>';
     } else { // Si pas d'erreur, on ajoute l'utilisateur dans la base de données.
 
-        $insertion_utilisateur = $db->prepare("INSERT INTO utilisateurs (username_utilisateur, password_utilisateur, nom_utilisateur, naissance_utilisateur, ville_utilisateur, postal, adresse, telephone) VALUES (:username, :password, :nom, :datenaiss, :ville, :postal, :adresse, :telephone)");
-        $insertion_utilisateur->bindParam(":username",$_POST['username']);
+        $insertion_utilisateur = $db->prepare("INSERT INTO utilisateurs (email_utilisateur, password_utilisateur, nom_utilisateur, prenom_utilisateur, naissance_utilisateur, ville_utilisateur, postal, adresse, telephone) VALUES (:email, :password, :nom, :prenom, :datenaiss, :ville, :postal, :adresse, :telephone)");
+        $insertion_utilisateur->bindParam(":email",$_POST['email']);
         $insertion_utilisateur->bindParam(":password",sha1($_POST['password']));
         $insertion_utilisateur->bindParam(":nom",$_POST['nom']);
-        //$insertion_utilisateur->bindParam(":prenom",$_POST['prenom']);
+        $insertion_utilisateur->bindParam(":prenom",$_POST['prenom']);
         $insertion_utilisateur->bindParam(":datenaiss", $timestamp_naissance);
         $insertion_utilisateur->bindParam(":ville",$_POST['ville']);
         $insertion_utilisateur->bindParam(":postal", $_POST['postal']);
@@ -64,6 +64,7 @@ if($_GET['action'] == "new") {
         $insertion_utilisateur->bindParam(":telephone", $_POST['telephone']);
 
         $insertion_utilisateur->execute();
+        
 
         header('Location: http://localhost/cheers/index.php?page=home');
         exit();

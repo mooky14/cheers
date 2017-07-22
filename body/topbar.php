@@ -39,7 +39,7 @@
     <h4>Connexion</h4>
     <form class="<?php echo ($page=="connexion")?"active" : ""; ?>" method="post" action="index.php?page=connexion">
         <div class="form-group">
-            <input type="text" placeholder="Nom d'utilisateur" name="username" class="form-control">
+            <input type="text" placeholder="Nom d'utilisateur" name="email" class="form-control">
         </div>
         <div class="form-group">
             <input type="password" placeholder="Mot de passe" name="password" class="form-control">
@@ -56,7 +56,7 @@
     <h4>Connexion</h4>
     <form class="<?php echo ($page=="connexion")?"active" : ""; ?>" method="post" action="index.php?page=connexion">
         <div class="form-group">
-            <input type="text" placeholder="Nom d'utilisateur" name="username" class="form-control">
+            <input type="text" placeholder="Nom d'utilisateur" name="email" class="form-control">
         </div>
         <div class="form-group">
             <input type="password" placeholder="Mot de passe" name="password" class="form-control">
@@ -89,7 +89,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="sass.html">Mes offres</a></li>
                 <li><a href="index.php?page=mon_magasin">Mon magasin</a></li>
-                <li style="min-width: 120px; max-width: 200px; "><a class="dropdown-button" href="#!" data-activates="dd_connexion1"><?php echo $_SESSION['username']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
+                <li style="min-width: 120px; max-width: 200px; "><a class="dropdown-button" href="#!" data-activates="dd_connexion1"><?php echo $_SESSION['email']; ?><i class="material-icons right">arrow_drop_down</i></a></li>
               </ul>
 <?php }else{ ?>
             <ul class="right hide-on-med-and-down">
@@ -105,7 +105,7 @@
                 <li><a class="dropdown-button" href="#!" data-activates="dd_offre2">Nos offres<i class="material-icons right">arrow_drop_down</i></a></li>
                 <li class="<?php echo ($page=="contact")?"active" : ""; ?>"><a href="index.php?page=contact">Contact</a></li>
 <?php if($_SESSION['connecte'] == 'true') { ?>
-                <li><a href="#" class="dropdown-button" data-toggle="dropdown" data-activates ="dd_connexion2" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons">account_circle</i><?php echo $_SESSION['username']; ?><span class="caret"></span></a></li>
+                <li><a href="#" class="dropdown-button" data-toggle="dropdown" data-activates ="dd_connexion2" role="button" aria-haspopup="true" aria-expanded="false"><i class="material-icons">account_circle</i><?php echo $_SESSION['email']; ?><span class="caret"></span></a></li>
                 <li><a href="index.php?page=logout">Déconnexion</a></li>
 <?php }else{ ?>
                 <li><a class="waves-effect waves-light btn view" data-target="modal2">Connexion</a></li>

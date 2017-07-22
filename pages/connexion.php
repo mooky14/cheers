@@ -7,12 +7,12 @@ if($_GET['action'] == "deconnexion") {
     exit(0);
 }
 
-if(!empty($_POST['username']) && !empty($_POST['password'])) {
+if(!empty($_POST['email']) && !empty($_POST['password'])) {
 
     $encPasswd = sha1($_POST['password']);
 
-    $getUser = $db->prepare("SELECT * FROM utilisateurs WHERE username_utilisateur = :username AND password_utilisateur = :password LIMIT 1");
-    $getUser->bindParam(":username", $_POST['username']);
+    $getUser = $db->prepare("SELECT * FROM utilisateurs WHERE email_utilisateur = :email AND password_utilisateur = :password LIMIT 1");
+    $getUser->bindParam(":email", $_POST['email']);
     $getUser->bindParam(":password", $encPasswd);
     $getUser->execute();
     $infoUser = $getUser->fetch();
@@ -20,7 +20,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     if($getUser->rowCount() == 1) {
 
         $_SESSION['connecte'] = true;
-        $_SESSION['username'] = $infoUser['username_utilisateur'];
+        $_SESSION['email'] = $infoUser['email_utilisateur'];
         $_SESSION['id'] = $infoUser['id_utilisateur'];
         $_SESSION['nom'] = $infoUser['nom_utilisateur'];
         $_SESSION['prenom'] = $infoUser['prenom_utilisateur'];
@@ -28,7 +28,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
         $_SESSION['naissance'] = $infoUser['naissance_utilisateur'];
         $_SESSION['telephone'] = $infoUser['telephone'];
 
-        $_SESSION['message'] = array("success", '<i class=""></i> Vous êtes maintenant connecté en tant que '.$_SESSION['username'].' !');
+        $_SESSION['message'] = array("success", '<i class=""></i> Vous êtes maintenant connecté en tant que '.$_SESSION['email'].' !');
         header("Location: " . $_SERVER['HTTP_REFERER']);
         exit(0);
         exit();
@@ -46,9 +46,9 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
         <div class="row">
 
             <div class="">
-                <div class="form-group <?php echo (isErreurChamps('username')?"has-error":""); ?>">
-                    <label class="control-label" for="username">Nom d'utilisateur :</label>
-                    <input type="text" class="form-control" id="username" name="username" value="<?php echo htmlentities($_POST['username']); ?>" placeholder="Exemple : ChuckNorris">
+                <div class="form-group <?php echo (isErreurChamps('email')?"has-error":""); ?>">
+                    <label class="control-label" for="email">Nom d'utilisateur :</label>
+                    <input type="text" class="form-control" id="email" name="email" value="<?php echo htmlentities($_POST['email']); ?>" placeholder="Exemple : ChuckNorris">
                 </div>
             </div>
 

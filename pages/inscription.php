@@ -5,7 +5,7 @@
     <h4>Paiement</h4>
     <form class="<?php echo ($page=="inscription")?"active" : ""; ?>" method="post" action="index.php?page=connexion">
         <div class="form-group">
-            <input type="text" placeholder="Nom d'utilisateur" name="username" class="form-control">
+            <input type="text" placeholder="Nom d'utilisateur" name="email" class="form-control">
         </div>
         <div class="form-group">
             <input type="password" placeholder="Mot de passe" name="password" class="form-control">
@@ -23,14 +23,19 @@
 <div class="row">
     <form class="col s12" action="index.php?page=inscription&action=new" method="post">
             <div class="row">
-            <div class="input-field col s12 m12 l5">
+            <div class="input-field col s12 m12 l4">
                 <div class="">
-                    <label class="control-label" for="username">Prénom</label>
-                    <input type="text" class="form-control" id="username" name="username" value="<?php echo htmlentities($_POST['username']); ?>" placeholder="Prénom">
+                    <label class="control-label" for="email">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" value="<?php echo htmlentities($_POST['email']); ?>" placeholder="Prénom">
                 </div>
             </div>
-
-            <div class="input-field col s12 m12 l5">
+             <div class="input-field col s12 m12 l4">
+                <div class="">
+                    <label class="control-label" for="prenom">Prénom</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" value="<?php echo htmlentities($_POST['prenom']); ?>" placeholder="Nom de famille">
+                </div>
+            </div>
+            <div class="input-field col s12 m12 l4">
                 <div class="">
                     <label class="control-label" for="nom">Nom</label>
                     <input type="text" class="form-control" id="nom" name="nom" value="<?php echo htmlentities($_POST['nom']); ?>" placeholder="Nom de famille">
