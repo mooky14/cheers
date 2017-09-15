@@ -89,5 +89,5 @@
         <!-- /.row -->
 
         <hr>
-
+    </div>
 <?php include('footer.php'); ?>
