@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jul 21, 2017 at 04:32 PM
+-- Generation Time: Sep 21, 2017 at 12:34 PM
 -- Server version: 5.6.34-log
 -- PHP Version: 7.0.13
 
@@ -57,14 +57,15 @@ CREATE TABLE IF NOT EXISTS `comments` (
   `post_id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `seen` tinyint(1) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`id`, `name`, `email`, `comment`, `post_id`, `date`, `seen`) VALUES
-(6, 'sqfdsf', 'clement.vanmerris@laposte.net', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam libero arcu, porta at ipsum vel, aliquam pretium elit. Suspendisse et magna leo. Quisque molestie purus a lorem suscipit varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque orci tortor, suscipit sed luctus ut, ullamcorper sed mi. Vestibulum egestas risus vel nisi malesuada aliquam. Sed fringilla fringilla odio, nec accumsan ligula. Etiam ornare eros lorem, a condimentum nisl dictum ut. Praesent vestibulum fringilla pellentesque. Aliquam erat volutpat. Ut eros est, pharetra et mi non, ultrices pulvinar sem. Phasellus sem est, maximus aliquam laoreet id, bibendum a ante. Donec sit amet eleifend nunc.\r\n\r\nIn tincidunt ipsum sed arcu dapibus iaculis. Nunc dignissim pharetra nisi, id accumsan sapien. Praesent pulvinar enim metus, dapibus pharetra felis imperdiet a. Nam venenatis turpis a sapien congue consequat. Cras pretium ullamcorper lacus non ullamcorper. Nullam imperdiet, lectus sit amet elementum elementum, sem risus sodales sapien, non elementum tellus turpis at lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed lacinia elementum feugiat.\r\n\r\nMauris rhoncus, justo at ultrices posuere, sem nunc laoreet nulla, ut mollis elit urna eget nisi. Praesent fringilla ipsum dui, at blandit velit cursus in. Praesent vulputate facilisis laoreet. Donec quis sapien risus. Fusce nec sapien sed est volutpat fermentum. Quisque nec massa facilisis elit tincidunt cursus. Donec aliquam elit in erat condimentum, sed porttitor enim dictum. Mauris venenatis scelerisque leo, vitae tempus ligula varius id.\r\n\r\nNulla placerat vitae justo id maximus. Phasellus pellentesque sapien urna. Vestibulum dictum, magna eu commodo egestas, mi nibh fermentum libero, eget venenatis lacus nunc sit amet nulla. Cras interdum ex at elit egestas, at efficitur lacus ultrices. Mauris eu massa felis. Nunc sed ex vitae tellus egestas blandit. In viverra nisl non fringilla lacinia.\r\n\r\nDonec mattis orci ac odio consectetur, vel vehicula neque pellentesque. Nunc a ipsum sollicitudin, euismod justo ac, porta nisi. Nam ornare neque eget malesuada scelerisque. Nulla vitae sem urna. Nullam quis ipsum consequat ipsum vestibulum blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae commodo elit. In hac habitasse platea dictumst. Maecenas vitae mattis velit. Nam laoreet nisi ut lorem luctus gravida.', 3, '2017-06-16 15:32:09', 1);
+(6, 'sqfdsf', 'clement.vanmerris@laposte.net', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam libero arcu, porta at ipsum vel, aliquam pretium elit. Suspendisse et magna leo. Quisque molestie purus a lorem suscipit varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque orci tortor, suscipit sed luctus ut, ullamcorper sed mi. Vestibulum egestas risus vel nisi malesuada aliquam. Sed fringilla fringilla odio, nec accumsan ligula. Etiam ornare eros lorem, a condimentum nisl dictum ut. Praesent vestibulum fringilla pellentesque. Aliquam erat volutpat. Ut eros est, pharetra et mi non, ultrices pulvinar sem. Phasellus sem est, maximus aliquam laoreet id, bibendum a ante. Donec sit amet eleifend nunc.\r\n\r\nIn tincidunt ipsum sed arcu dapibus iaculis. Nunc dignissim pharetra nisi, id accumsan sapien. Praesent pulvinar enim metus, dapibus pharetra felis imperdiet a. Nam venenatis turpis a sapien congue consequat. Cras pretium ullamcorper lacus non ullamcorper. Nullam imperdiet, lectus sit amet elementum elementum, sem risus sodales sapien, non elementum tellus turpis at lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed lacinia elementum feugiat.\r\n\r\nMauris rhoncus, justo at ultrices posuere, sem nunc laoreet nulla, ut mollis elit urna eget nisi. Praesent fringilla ipsum dui, at blandit velit cursus in. Praesent vulputate facilisis laoreet. Donec quis sapien risus. Fusce nec sapien sed est volutpat fermentum. Quisque nec massa facilisis elit tincidunt cursus. Donec aliquam elit in erat condimentum, sed porttitor enim dictum. Mauris venenatis scelerisque leo, vitae tempus ligula varius id.\r\n\r\nNulla placerat vitae justo id maximus. Phasellus pellentesque sapien urna. Vestibulum dictum, magna eu commodo egestas, mi nibh fermentum libero, eget venenatis lacus nunc sit amet nulla. Cras interdum ex at elit egestas, at efficitur lacus ultrices. Mauris eu massa felis. Nunc sed ex vitae tellus egestas blandit. In viverra nisl non fringilla lacinia.\r\n\r\nDonec mattis orci ac odio consectetur, vel vehicula neque pellentesque. Nunc a ipsum sollicitudin, euismod justo ac, porta nisi. Nam ornare neque eget malesuada scelerisque. Nulla vitae sem urna. Nullam quis ipsum consequat ipsum vestibulum blandit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae commodo elit. In hac habitasse platea dictumst. Maecenas vitae mattis velit. Nam laoreet nisi ut lorem luctus gravida.', 3, '2017-06-16 15:32:09', 1),
+(7, 'lulu', 'stanislas.lintot@gmail.com', 'fddfg', 3, '2017-09-07 11:41:11', 0);
 
 -- --------------------------------------------------------
 
@@ -88,8 +89,38 @@ CREATE TABLE IF NOT EXISTS `magasins` (
 --
 
 INSERT INTO `magasins` (`id_magasin`, `id_utilisateur`, `usershop`, `naissance`, `ville_magasin`, `postal_magasin`, `adresse_magasin`, `telephone_magasin`) VALUES
-(10, 2, 'Magasinmoche', '-788918400', 'Rouen', 75000, '12 rue duchemin', '0600000000'),
-(11, 6, 'Troptoplemag', '774230400', 'Rouen', 76000, '12 impasse Duboc', '0600000000');
+(10, 2, 'Bar1', '774230400', 'Rouen', 76000, '1 Boulevard Maréchal Juin', '0600000000'),
+(11, 6, 'Troptoplemag', '774230400', 'Rouen', 76000, '12 impasse Duboc', '0600000000'),
+(12, 2, 'Bar1', '861926400', 'Caen', 14000, '1 Boulevard Maréchal Juin', '0605070901');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `markers`
+--
+
+CREATE TABLE IF NOT EXISTS `markers` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `lat` float(10,6) NOT NULL,
+  `lng` float(10,6) NOT NULL,
+  `type` varchar(30) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `markers`
+--
+
+INSERT INTO `markers` (`id`, `name`, `address`, `lat`, `lng`, `type`) VALUES
+(1, 'Love.Fish', '580 Darling Street, Rozelle, NSW', -33.861034, 151.171936, 'restaurant'),
+(2, 'Young Henrys', '76 Wilford Street, Newtown, NSW', -33.898113, 151.174469, 'bar'),
+(3, 'Hunter Gatherer', 'Greenwood Plaza, 36 Blue St, North Sydney NSW', -33.840282, 151.207474, 'bar'),
+(4, 'The Potting Shed', '7A, 2 Huntley Street, Alexandria, NSW', -33.910751, 151.194168, 'bar'),
+(5, 'Nomad', '16 Foster Street, Surry Hills, NSW', -33.879917, 151.210449, 'bar'),
+(6, 'Three Blue Ducks', '43 Macpherson Street, Bronte, NSW', -33.906357, 151.263763, 'restaurant'),
+(7, 'Single Origin Roasters', '60-64 Reservoir Street, Surry Hills, NSW', -33.881123, 151.209656, 'restaurant'),
+(8, 'Red Lantern', '60 Riley Street, Darlinghurst, NSW', -33.874737, 151.215530, 'restaurant');
 
 -- --------------------------------------------------------
 
@@ -125,9 +156,10 @@ INSERT INTO `posts` (`id`, `title`, `content`, `writer`, `image`, `date`, `poste
 
 CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `id_utilisateur` int(11) NOT NULL,
-  `username_utilisateur` text NOT NULL,
+  `email_utilisateur` text NOT NULL,
   `password_utilisateur` text NOT NULL,
   `nom_utilisateur` text,
+  `prenom_utilisateur` text,
   `naissance_utilisateur` int(11) NOT NULL,
   `ville_utilisateur` text,
   `postal` int(10) DEFAULT NULL,
@@ -139,12 +171,13 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 -- Dumping data for table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id_utilisateur`, `username_utilisateur`, `password_utilisateur`, `nom_utilisateur`, `naissance_utilisateur`, `ville_utilisateur`, `postal`, `adresse`, `telephone`) VALUES
-(1, 'clement', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'van', 773020800, 'rouen', NULL, NULL, '0600000000'),
-(2, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test', -122605200, 'test', NULL, NULL, '0235000000'),
-(5, 'Michel', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'vanmerris', 774230400, 'Rouen', 76000, '12 impasse duboc', '0600000000'),
-(6, 'jean', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'mich', 774230400, 'Rouen', 76000, '12 impasse Duboc', '0600000001'),
-(8, 'test3', '3ebfa301dc59196f18593c45e519287a23297589', 'test3', 774230400, 'Rouen', 76000, '12 impasse duchemin', '0600000000');
+INSERT INTO `utilisateurs` (`id_utilisateur`, `email_utilisateur`, `password_utilisateur`, `nom_utilisateur`, `prenom_utilisateur`, `naissance_utilisateur`, `ville_utilisateur`, `postal`, `adresse`, `telephone`) VALUES
+(1, 'clement', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'van', 'clement', 773020800, 'rouen', NULL, NULL, '0600000000'),
+(2, 'test', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test', 'test', -122605200, 'test', NULL, NULL, '0235000000'),
+(5, 'Michel', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'vanmerris', 'clément', 774230400, 'Rouen', 76000, '12 impasse duboc', '0600000000'),
+(6, 'jean', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'mich', 'jean', 774230400, 'Rouen', 76000, '12 impasse Duboc', '0600000001'),
+(7, 'test3', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 'test3', 'test3', 861926400, 'bagdad', 50000, '12 rue maréchal petin', '0645894594'),
+(8, 'lulu', '4ec844dae165816ebad5cb5ed77840e2484047d6', 'jakie', 'lulu', 861926400, 'Caen', 14000, '27 rue du jardin Barbetlod', '0648594632');
 
 --
 -- Indexes for dumped tables
@@ -167,6 +200,12 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `magasins`
   ADD PRIMARY KEY (`id_magasin`);
+
+--
+-- Indexes for table `markers`
+--
+ALTER TABLE `markers`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `posts`
@@ -193,12 +232,17 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `magasins`
 --
 ALTER TABLE `magasins`
   MODIFY `id_magasin` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT for table `markers`
+--
+ALTER TABLE `markers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `posts`
 --
